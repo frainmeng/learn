@@ -234,7 +234,7 @@ tags:["git"]
 
 2.  语法
 	
-		git checkout -- file
+		git checkout [选项] [file or 分支名称] [远程分支名称]
 
 3.  选项
 		
@@ -251,6 +251,8 @@ tags:["git"]
 		git checkout -- git常用命令.enmd
 		##从主分支中创建并切换分支
 		git checkout -b dev
+		##从主分支中创建并切换分支，同时关联到远程仓库origin的dev分支
+		git checkout -b dev origin/dev
 		##切换到master分支
 		git checkout master
 
@@ -262,19 +264,22 @@ tags:["git"]
 
 2.  语法
 	
-	git branch [分支名称]
+	git branch [选项] [分支名称]
 
 3.  选项
 	
 	*	`-d`：删除分支
 	*	`-D`：强行删除分支
+	*	`--set-upstream-to=origin/dev`：将远程仓库的分支与本地仓库的分支管理
 
 4.  示例
 	
-	##创建dev分支
-	git branch dev
-	##列出所有分支，当前分支前面会标一个*号
-	git branch
+		##创建dev分支
+		git branch dev
+		##将本地的dev分支与远程仓库origin的dev分支关联
+		git branch --set-upstream-to=origin/dev dev
+		##列出所有分支，当前分支前面会标一个*号
+		git branch
 
 ### `merge`
 
@@ -317,7 +322,23 @@ tags:["git"]
 	*	`pop [stash_id]`：恢复工作现场，并删除stash
 
 5.  示例
-	
+		
+		##保存当前工作现场
+		git stash
+		##查看已保存的工作现场
+		git stash list 
+		##恢复现场（单个现场是使用）
+		git stash apply
+		##恢复指定的现场
+		git stash apply stash@{0}
+		##删除保存的现场
+		git stash drop
+		##删除已保存的指定的现场
+		git stash drop stash@{0}
+		##恢复现场并从暂存空间删除
+		git stash pop
+		##恢复指定的现场并从暂存空间删除
+		git stash pop stash@{0}
 		
 	
 ### `rm`删除命令
@@ -338,7 +359,7 @@ tags:["git"]
 		
 		git rm test.txt
 
-### `remote add`
+### `remote`
 
 1.  说明
 	
@@ -360,6 +381,8 @@ tags:["git"]
 		
 		##通过ssh方式添加远程仓库
 		git remote add origin https://github.com/frainmeng/learn.git
+		##查看远程仓库
+		git remote -v
 
 ### `push`
 
@@ -400,4 +423,9 @@ tags:["git"]
 	
 		git clone git@github.com:frainmeng/learn.git
 
+### `tag`标签
 
+1.  说明
+2.  语法
+3.  选项
+4.  示例
