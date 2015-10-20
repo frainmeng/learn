@@ -221,7 +221,7 @@ tags:["git"]
 
 1.  说明
 
-	将分支中的文件覆盖到工作区
+	用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”
 
 2.  语法
 	
@@ -230,9 +230,83 @@ tags:["git"]
 3.  选项
 		
 		*	`--`：不切换到另一个分支
+		*	`-b`：创建并切换分支
 
 4.  示例
 		
 		git checkout -- git常用命令.enmd
+
+### `rm`删除命令
+
+1.  说明
+	
+	将文件从版本库中移除，移除后要commit
+
+2.  语法
+		
+		git rm file
+
+3.  选项
+		
+	略
+
+4.  示例
+		
+		git rm test.txt
+
+### `remote add`
+
+1.  说明
+	
+	添加远程仓库（即关联本地仓库和远程仓库）需要在本地仓库的**主目录中执行该命令**
+
+2.  语法
+		
+		git remote add "远程仓库的别名" 远程仓库的url
+
+3.  选项
+	
+	略
+
+4.  示例
+		
+		##通过ssh方式添加远程仓库
+		git remote add origin https://github.com/frainmeng/learn.git
+
+### `push`
+
+1.  说明
+	
+	把本地库的内容推送到远程	
+
+2.  语法
+		
+		git push [选项] 远程仓库别名 本地仓库分支
+
+3.  选项
+	
+	*	`-u`：Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令
+
+4.  示例
+
+		git push -u origin master
+
+### `clone`
+
+1.  说明
+	
+	从远程仓库克隆到本地仓库
+
+2.  语法
+			
+		git clone 远程仓库url
+
+3.  选项
+		
+	略
+
+4.  示例
+	
+		git clone git@github.com:frainmeng/learn.git
 
 
