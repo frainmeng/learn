@@ -1,5 +1,1 @@
 This is a test file.
-Creating a new branch is quick AND simple.
-Creating a new branch is quick and simple.
-This is test lines;
-this is test line,too.
