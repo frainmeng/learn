@@ -342,17 +342,21 @@ tags:["git"]
 
 1.  说明
 	
-	添加远程仓库（即关联本地仓库和远程仓库）需要在本地仓库的**主目录中执行该命令**
+	查看远程仓库
 
 2.  语法
 		
-		git remote add "远程仓库的别名" 远程仓库的url
+		git remote [选项] [子命令] ["远程仓库的别名"] [远程仓库的url]
 
 3.  选项
-	
-	略
 
-4.  示例
+	*	`-v`：显示更详细的信息（抓取和推送的url）
+
+4.  **子命令**
+	
+	*	`add`：添加远程仓库（即关联本地仓库和远程仓库）需要在本地仓库的**主目录中执行该命令**
+
+5.  示例
 		
 		##通过ssh方式添加远程仓库
 		git remote add origin https://github.com/frainmeng/learn.git
@@ -369,11 +373,14 @@ tags:["git"]
 
 3.  选项
 	
-	*	`-u`：Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令
+	*	`-u`：初次推送使用，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令
 
 4.  示例
 
+		##初次推送master分支到远程仓库
 		git push -u origin master
+		##将dev分支推送至远程仓库
+		git push origin dev
 
 ### `clone`
 
