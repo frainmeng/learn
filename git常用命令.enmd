@@ -223,6 +223,7 @@ tags:["git"]
 
 	*	用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”
 	*	从版本库中检出文件或分支
+	*	切换分支
 
 2.  语法
 	
@@ -243,6 +244,8 @@ tags:["git"]
 		git checkout -- git常用命令.enmd
 		##从主分支中创建并切换分支
 		git checkout -b dev
+		##切换到master分支
+		git checkout master
 
 ### `branch`
 
