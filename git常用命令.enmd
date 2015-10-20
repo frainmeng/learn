@@ -248,11 +248,12 @@ tags:["git"]
 
 1.  说明
 	
-	创建分支
+	*	创建分支
+	*	查询当前分支
 
 2.  语法
 	
-	git branch 分支名称
+	git branch [分支名称]
 
 3.  选项
 	
@@ -260,7 +261,10 @@ tags:["git"]
 
 4.  示例
 	
+	##创建dev分支
 	git branch dev
+	##列出所有分支，当前分支前面会标一个*号
+	git branch
 
 ### `rm`删除命令
 
