@@ -173,7 +173,12 @@ tags:["git"]
 
 4.  示例
 		
+		##查看日志
+		git log 
+		##查看日志，显示commit_id content
 		git log --pretty=oneline
+		##查看日志，显示commit_id content，并显示分支提交信息
+		git log --graph --pretty=oneline --abbrev-commit
 
 ### `reset`版本回退命令
 
@@ -280,7 +285,7 @@ tags:["git"]
 
 3.  选项
 	
-	略
+	*	` --no-ff`：禁用Fast forward
 
 4.  示例
 
