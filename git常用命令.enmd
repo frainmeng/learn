@@ -173,6 +173,6 @@ tags:["git"]
 
 4.  示例
 		
-		git log
+		git log --pretty=oneline
 
 ### ``
