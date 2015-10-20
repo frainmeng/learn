@@ -169,7 +169,9 @@ tags:["git"]
 
 3.  选项
 	
-	*	`--pretty`：显示commit id + 提交时的说明
+	*	`--pretty=oneline`：显示commit_id（长） + 提交时的说明
+	*	`--graph`：显示分支信息
+	*	`--abbrev-commit`：显示commit_id + 提交说明
 
 4.  示例
 		
@@ -291,6 +293,31 @@ tags:["git"]
 4.  示例
 
 		git merge dev
+
+### `stash`
+
+1.  说明
+	
+	暂存当前工作现场
+
+2.  语法
+	
+		git stash [选项][子命令]
+
+3.  选项
+	
+	略
+
+4.  **子命令**
+	
+	*	`list`：查看存储的工作现场
+	*	`apply [stash_id]`：恢复工作现场，但是恢复后，stash内容并不删除
+	*	`drop [stash_id]`：删除已存储的工作现场
+	*	`pop [stash_id]`：恢复工作现场，并删除stash
+
+5.  示例
+	
+		
 	
 ### `rm`删除命令
 
