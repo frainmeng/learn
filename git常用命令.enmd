@@ -281,11 +281,12 @@ tags:["git"]
 
 2.  语法
 	
-	git merge 分支名称
+	git merge [选项] 分支名称
 
 3.  选项
 	
 	*	` --no-ff`：禁用Fast forward
+	*	`-m`：在禁用Fast forward，
 
 4.  示例
 
