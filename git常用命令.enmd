@@ -16,7 +16,8 @@ tags:["git"]
 
 2.  选项
 	
-	*	`--global` ：表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址  
+	*	`--global` ：表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址
+	*	`--list`：查看所有配置信息  
 		
 3.  示例
 	
@@ -114,7 +115,8 @@ tags:["git"]
 
 3.  选项
 	
-	*	`-m` ：为本次添加说明
+	*	`-m`：为本次添加说明
+	*	`-a`：相当于执行先执行add再执行commit
 
 4.  示例
 	
@@ -172,6 +174,7 @@ tags:["git"]
 	*	`--pretty=oneline`：显示commit_id（长） + 提交时的说明
 	*	`--graph`：显示分支信息
 	*	`--abbrev-commit`：显示commit_id + 提交说明
+	*	`-num`：num表示数字，查看最近提交
 
 4.  示例
 		
@@ -181,6 +184,10 @@ tags:["git"]
 		git log --pretty=oneline
 		##查看日志，显示commit_id content，并显示分支提交信息
 		git log --graph --pretty=oneline --abbrev-commit
+		##查看最近一次提交
+		git log --graph --pretty=oneline --abbrev-commit -1
+		##不说了，查看日志用这个就够了
+		git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
 ### `reset`版本回退命令
 
@@ -268,6 +275,7 @@ tags:["git"]
 
 3.  选项
 	
+	*	`-a`：查看本地及远程仓库中的分支
 	*	`-d`：删除分支
 	*	`-D`：强行删除分支
 	*	`--set-upstream-to=origin/dev`：将远程仓库的分支与本地仓库的分支管理
@@ -476,3 +484,6 @@ tags:["git"]
 		
 		##查看标签的详细信息
 		git show v1.0
+
+
+
