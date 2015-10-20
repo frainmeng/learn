@@ -392,7 +392,7 @@ tags:["git"]
 
 2.  语法
 		
-		git push [选项] 远程仓库别名 本地仓库分支
+		git push [选项] 远程仓库别名 [本地仓库分支 or 标签名]
 
 3.  选项
 	
@@ -404,6 +404,12 @@ tags:["git"]
 		git push -u origin master
 		##将dev分支推送至远程仓库
 		git push origin dev
+		##将本地标签推送至远程仓库
+		git push origin v1.0
+		##将本地所有标签推送至远程仓库
+		git push origin --tags
+		##将远程仓库中的标签删除
+		git push origin :refs/tags/v1.0
 
 ### `clone`
 
@@ -426,6 +432,47 @@ tags:["git"]
 ### `tag`标签
 
 1.  说明
+	
+	标签操作
+
 2.  语法
+
+		git tag [选项] <tagname> [选项] [commit_id]
+
 3.  选项
+	
+	*	`-a`：配合`-m`使用，附加说明信息
+	*	`-m`：配合`-a`使用，附加说明信息
+	*	`-d`：删除标签
+	*	`-s`：用私钥签名一个标签
 4.  示例
+		
+		##创建标签
+		git tag v1.0
+		##在指定的（提交）位置创建标签
+		git tag v0.9 67833a4
+		##查看所有标签
+		git tag
+		##为标签附加说明西悉尼
+		git tag -a v0.9 -m "说明信息" 67833a4
+		##删除标签
+		git tag -d v0.9
+
+### `show`
+
+1.  说明
+	
+	显示标签的详细信息
+
+2.  语法
+	
+	略
+
+3.  选项
+	
+	略
+
+4.  示例
+		
+		##查看标签的详细信息
+		git show v1.0
